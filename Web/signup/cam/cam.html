@@ -103,6 +103,7 @@
             							window.requestAnimationFrame(loop);
             						}
             						let status = "standard"
+												let message = "기본 자세"
             
             						async function predict() {
             							// Prediction #1: run input through posenet
@@ -112,30 +113,39 @@
             							const prediction = await model.predict(posenetOutput);
             							if(prediction[0].probability.toFixed(2) == 1.00 || prediction[1].probability.toFixed(2) == 1.00) {
             								status = "stand"
+														message = "기본 자세"
             								savedata(status);
             							} else if(prediction[2].probability.toFixed(2) == 1.00 || prediction[3].probability.toFixed(2) == 1.00) {
             								status = "view_left"
+														message = "왼쪽"
             								savedata(status);
             							} else if(prediction[4].probability.toFixed(2) == 1.00 || prediction[5].probability.toFixed(2) == 1.00) {
             								status = "view_right"
+														message = "오른쪽"
             								savedata(status);
             							} else if(prediction[6].probability.toFixed(2) == 1.00 || prediction[7].probability.toFixed(2) == 1.00) {
             								status = "clap"
+														message = "박수"
             								savedata(status);
             							} else if(prediction[8].probability.toFixed(2) == 1.00 || prediction[9].probability.toFixed(2) == 1.00 || prediction[10].probability.toFixed(2) == 1.00 || prediction[11].probability.toFixed(2) == 1.00) {
             								status = "hand"
+														message = "손"
             								savedata(status);
             							} else if(prediction[12].probability.toFixed(2) == 1.00) {
             								status = "rowing"
+														message = "노젓기"
             								savedata(status);
             							} else if(prediction[13].probability.toFixed(2) == 1.00) {
             								status = "hurry"
+														message = "만세"
             								savedata(status);
             							} else if(prediction[14].probability.toFixed(2) == 1.00) {
             								status = "meditation"
+														message = "메뉴"
             								savedata(status);
             							} else {
             								status = "stand"
+														message = "기본 자세"
             								savedata(status);
             							}
             							
@@ -145,7 +155,7 @@
             								
             								if(prediction[i].probability >= 1){
             									const motionResult = document.getElementById('motionResult');
-            									motionResult.innerHTML = prediction[i].className;
+            									motionResult.innerHTML = message;
             								}
             								// labelContainer.childNodes[i].innerHTML = classPrediction;
             							}
