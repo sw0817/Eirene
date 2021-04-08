@@ -53,155 +53,160 @@
 	<div class="limiter">
 		<div class="container-login100">
 			
-			<div class="wrap-login100">
+		<div class="wrap-login100">
           <div class="offset-xl-0 col-xl-6 offset-lg-0 col-lg-6 col-md-9 offset-md-1 offset-sm-1">
               <div class="about-right-cap">
                   <div class="about-right-img">
-                      <canvas id="canvas"></canvas>
-            					<!-- <img src="images/img-01.png" alt="IMG"> -->
-            					<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-            					<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
-            					<script type="text/javascript">
-            						// More API functions here:
-            						// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
-            
-            						// the link to your model provided by Teachable Machine export panel
-            						const URL = "./my_model/";
-            						let model, webcam, ctx, labelContainer, maxPredictions;
-            
-            						async function init() {
-            							const modelURL = URL + "model.json";
-            							const metadataURL = URL + "metadata.json";
-            
-            							// load the model and metadata
-            							// Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-            							// Note: the pose library adds a tmPose object to your window (window.tmPose)
-            							model = await tmPose.load(modelURL, metadataURL);
-            							maxPredictions = model.getTotalClasses();
-            
-            							// Convenience function to setup a webcam
-            							const size = 400;
-            							const flip = true; // whether to flip the webcam
-            							webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
-            							await webcam.setup(); // request access to the webcam
-            							await webcam.play();
-            							window.requestAnimationFrame(loop);
-            
-            							// append/get elements to the DOM
-            							const canvas = document.getElementById("canvas");
-            							canvas.width = size; canvas.height = size;
-            							ctx = canvas.getContext("2d");
-            							labelContainer = document.getElementById("label-container");
-            							for (let i = 0; i < maxPredictions; i++) { // and class labels
-            								labelContainer.appendChild(document.createElement("div"));
-            							}
-            						}
-            
-            						async function loop(timestamp) {
-            							webcam.update(); // update the webcam frame
-            							await predict();
-            							window.requestAnimationFrame(loop);
-            						}
-            						let status = "standard"
-												let message = "기본 자세"
-            
-            						async function predict() {
-            							// Prediction #1: run input through posenet
-            							// estimatePose can take in an image, video or canvas html element
-            							const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
-            							// Prediction 2: run input through teachable machine classification model
-            							const prediction = await model.predict(posenetOutput);
-            							if(prediction[0].probability.toFixed(2) == 1.00 || prediction[2].probability.toFixed(2) == 1.00) {
-            								status = "stand"
-														message = "기본 자세"
-            								savedata(status);
-            							} else if(prediction[1].probability.toFixed(2) == 1.00) {
-            								status = "view_left"
-														message = "왼쪽"
-            								savedata(status);
-            							} else if(prediction[6].probability.toFixed(2) == 1.00) {
-            								status = "view_right"
-														message = "오른쪽"
-            								savedata(status);
-            							} else if(prediction[3].probability.toFixed(2) == 1.00) {
-            								status = "clap"
-														message = "박수"
-            								savedata(status);
-            							} else if(prediction[4].probability.toFixed(2) == 1.00 || prediction[5].probability.toFixed(2) == 1.00) {
-            								status = "hand"
-														message = "손"
-            								savedata(status);
-            							} else if(prediction[7].probability.toFixed(2) == 1.00) {
-            								status = "rowing"
-														message = "노젓기"
-            								savedata(status);
-            							} else if(prediction[8].probability.toFixed(2) == 1.00) {
-            								status = "hurry"
-														message = "만세"
-            								savedata(status);
-            							} else if(prediction[9].probability.toFixed(2) == 1.00) {
-            								status = "meditation"
-														message = "메뉴"
-            								savedata(status);
-            							} else {
-            								status = "stand"
-														message = "기본 자세"
-            								savedata(status);
-            							}
-            							
-            							for (let i = 0; i < maxPredictions; i++) {
-            								const classPrediction =
-            									prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            								
-            								if(prediction[i].probability >= 1){
-            									const motionResult = document.getElementById('motionResult');
-            									motionResult.innerHTML = message;
-            								}
-            								// labelContainer.childNodes[i].innerHTML = classPrediction;
-            							}
-            
-            							// finally draw the poses
-            							drawPose(pose);
-            						}
-            
-            						function drawPose(pose) {
-            							if (webcam.canvas) {
-            								ctx.drawImage(webcam.canvas, 0, 0);
-            								// draw the keypoints and skeleton
-            								if (pose) {
-            									const minPartConfidence = 0.5;
-            									tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
-            									tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
-            								}
-            							}
-            						}
-            					</script>
+					<!-- <span data-toggle="tooltip" data-placement="top" title="여기서 본인이 촬영되는 모습을 확인해보세요!"> -->
+                      	<canvas id="canvas"></canvas>
+					  <!-- </span> -->
+		
+						<!-- <img src="images/img-01.png" alt="IMG"> -->
+						<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+						<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+						<script type="text/javascript">
+							// More API functions here:
+							// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
+
+							// the link to your model provided by Teachable Machine export panel
+							const URL = "./my_model/";
+							let model, webcam, ctx, labelContainer, maxPredictions;
+
+							async function init() {
+								const modelURL = URL + "model.json";
+								const metadataURL = URL + "metadata.json";
+
+								// load the model and metadata
+								// Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+								// Note: the pose library adds a tmPose object to your window (window.tmPose)
+								model = await tmPose.load(modelURL, metadataURL);
+								maxPredictions = model.getTotalClasses();
+
+								// Convenience function to setup a webcam
+								const size = 400;
+								const flip = true; // whether to flip the webcam
+								webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
+								await webcam.setup(); // request access to the webcam
+								await webcam.play();
+								window.requestAnimationFrame(loop);
+
+								// append/get elements to the DOM
+								const canvas = document.getElementById("canvas");
+								canvas.width = size; canvas.height = size;
+								ctx = canvas.getContext("2d");
+								labelContainer = document.getElementById("label-container");
+								for (let i = 0; i < maxPredictions; i++) { // and class labels
+									labelContainer.appendChild(document.createElement("div"));
+								}
+							}
+
+							async function loop(timestamp) {
+								webcam.update(); // update the webcam frame
+								await predict();
+								window.requestAnimationFrame(loop);
+							}
+							let status = "standard"
+										let message = "기본 자세"
+
+							async function predict() {
+								// Prediction #1: run input through posenet
+								// estimatePose can take in an image, video or canvas html element
+								const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+								// Prediction 2: run input through teachable machine classification model
+								const prediction = await model.predict(posenetOutput);
+								if(prediction[0].probability.toFixed(2) == 1.00 || prediction[2].probability.toFixed(2) == 1.00) {
+									status = "stand"
+												message = "기본 자세"
+									savedata(status);
+								} else if(prediction[1].probability.toFixed(2) == 1.00) {
+									status = "view_left"
+												message = "왼쪽"
+									savedata(status);
+								} else if(prediction[6].probability.toFixed(2) == 1.00) {
+									status = "view_right"
+												message = "오른쪽"
+									savedata(status);
+								} else if(prediction[3].probability.toFixed(2) == 1.00) {
+									status = "clap"
+												message = "박수"
+									savedata(status);
+								} else if(prediction[4].probability.toFixed(2) == 1.00 || prediction[5].probability.toFixed(2) == 1.00) {
+									status = "hand"
+												message = "손"
+									savedata(status);
+								} else if(prediction[7].probability.toFixed(2) == 1.00) {
+									status = "rowing"
+												message = "노젓기"
+									savedata(status);
+								} else if(prediction[8].probability.toFixed(2) == 1.00) {
+									status = "hurry"
+												message = "만세"
+									savedata(status);
+								} else if(prediction[9].probability.toFixed(2) == 1.00) {
+									status = "meditation"
+												message = "메뉴"
+									savedata(status);
+								} else {
+									status = "stand"
+												message = "기본 자세"
+									savedata(status);
+								}
+								
+								for (let i = 0; i < maxPredictions; i++) {
+									const classPrediction =
+										prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+									
+									if(prediction[i].probability >= 1){
+										const motionResult = document.getElementById('motionResult');
+										motionResult.innerHTML = message;
+									}
+									// labelContainer.childNodes[i].innerHTML = classPrediction;
+								}
+
+								// finally draw the poses
+								drawPose(pose);
+							}
+
+							function drawPose(pose) {
+								if (webcam.canvas) {
+									ctx.drawImage(webcam.canvas, 0, 0);
+									// draw the keypoints and skeleton
+									if (pose) {
+										const minPartConfidence = 0.5;
+										tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+										tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+									}
+								}
+							}
+						</script>
                    </div>
                 </div>
-				</div>
+			</div>
 
-				<div class="login100-form validate-form">
+			<div class="login100-form validate-form">
+				<span data-toggle="tooltip" data-placement="top" title="여기서 모션인식의 결과를 볼 수 있어요!">
 					<div id="motionResult" class="login100-form-title">
 						Motion Result
 					</div>
-					<span class="login100-form-title">
-						
-					</span>
+				</span>
+				<span class="login100-form-title">
+					
+				</span>
 
-					<div class="container-login100-form-btn">
-						<button type="button" onclick="init()" class="login100-form-btn">
-							Start
-						</button>
-					</div>
-					<div class="container-login100-form-btn">
-						<button id="btnLogout" class="login100-form-btn">
-							Logout
-						</button>
-					</div>
+				<div class="container-login100-form-btn">
+					<button data-toggle="tooltip" data-placement="top" title="Start 버튼을 눌러 모션인식을 시작하세요!" type="button" onclick="init()" class="login100-form-btn">
+						Start
+					</button>
+				</div>
+				<div class="container-login100-form-btn">
+					<button id="btnLogout" class="login100-form-btn">
+						Logout
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -283,4 +288,18 @@
     function savedata(status) {
         database.ref('user/' + emailId).set({status, nickname, login});
     }
+
+
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+  	})
+	  
 </script>
+
+<style>
+	.tooltip-inner {
+    	max-width: 350px; /* set this to your maximum fitting width */
+    	width: inherit; /* will take up least amount of space */ 
+		background-color: #4A148C;
+	}
+</style>
