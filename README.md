@@ -30,43 +30,43 @@
 
     - Orange 맵은 가을의 숲을 배경으로 한 `탄생의 가을숲`으로 경쾌하고 낙천적인 기질을 가진 사람들을 위한 인터렉션을 배치하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\orange.png)
+    ![](Document/Images\orange.png)
 
   - Yellow
 
     - Yellow 맵은 `황금의 방`으로 논리와 분석을 통해 다른 공간으로 이동 가능하도록 하는 인터렉션을 넣어 재미를 느끼도록 하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\yellow.png)
+    ![](Document/Images\yellow.png)
 
   - Green
 
     - Green 맵은 `자연속 산책`으로 자연 속에서 평안과 균형을 느낄 수 있는 인터렉션을 넣어 사용자가 휴식의 느낌을 갖도록 하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\green.png)
+    ![](Document/Images\green.png)
 
   - Blue
 
     - Blue 맵은 `바닷 속 난파선`으로 뛰어난 통찰력을 가지고 있고 어려운 일을 수월하게 해내는 기질을 가진 사람들을 위해 퀴즈를 풀어 보상을 얻을 수 있는 인터렉션을 배치하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\blue.png)
+    ![](Document/Images\blue.png)
 
   - Navy
 
     - Navy 맵은 `신비한 밤바다`로 정신적을 면을 중시하고 일상과 현실의 평범함의 중요성을 강조하는 인터렉션을 배치하여 자신감을 갖도록 유도하는 인터렉션을 배치하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\navy.png)
+    ![](Document/Images\navy.png)
 
   - Purple
 
     - Purple 맵은 `거울 호수`로 신비함과 정신적 세계에 관심이 많은 사람들에게 신비로운 경험을 할 수 있는 인터렉션을 배치하여 흥미를 주도록 하였다.
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\purple.png)
+    ![](Document/Images\purple.png)
 
   - Pink
 
     - Pink 맵은 `벚꽃 사막`으로 분홍 빛 사막 속 벚꽃을 배치하여 행동에 따라 신비롭고 편안함을 주는 인터렉션을 배치하여 타인에게 에너지를 쓰는 기질의 사람들에게 휴식의 느낌을 주도록 하였다.  
 
-    ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\pink.png)
+    ![](Document/Images\pink.png)
 
 - Multibus
 
@@ -78,7 +78,7 @@
 
 - Apk 파일 설치
 
-  ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\setting.jpg)
+  ![](Document/Images\setting.jpg)
 
   1. 설정에서 애플리케이션을 선택합니다.
   2. 에이레네 선택 후 권한 탭으로 이동합니다.
@@ -89,13 +89,13 @@
 
   - Webcam을 사용하여 모션 인식 인터렉션을 사용할 수 있습니다.
 
-  ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\webcam.PNG)
+  ![](Document/Images\webcam.PNG)
 
 - Google Cardboard
 
   - Cardboard를 사용하여 플레이 가능합니다.
 
-  ![](C:\Users\multicampus\Desktop\pjt02_realfinal\s04p23a401-2\Document\Images\cardbord.jpg)
+  ![](Document/Images\cardbord.jpg)
 
 
 
