@@ -15,6 +15,10 @@
 - Project Purpose
 
   마음의 여유가 없는 현대인들에게 안식처를 제공하는 VR서비스 입니다.
+  
+- Download
+
+  <a href="https://eirenebucket.s3.ap-northeast-2.amazonaws.com/Eirene_final_ver.apk">Download 받기</a>
 
 - Duration
 
