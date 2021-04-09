@@ -122,9 +122,9 @@ button {
 	background: transparent;
 }
 
-button:hover {
+/* button:hover {
 	cursor: pointer;
-}
+} */
 
 iframe {
 	border: none !important;
