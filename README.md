@@ -70,7 +70,7 @@
 
     - Pink 맵은 `벚꽃 사막`으로 분홍 빛 사막 속 벚꽃을 배치하여 행동에 따라 신비롭고 편안함을 주는 인터렉션을 배치하여 타인에게 에너지를 쓰는 기질의 사람들에게 휴식의 느낌을 주도록 하였다.  
 
-    ![](Document/Images/pink.png)
+    ![](Document/Images/pink.gif)
 
 - Multibus
 
