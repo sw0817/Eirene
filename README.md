@@ -34,19 +34,19 @@
 
     - Orange 맵은 가을의 숲을 배경으로 한 `탄생의 가을숲`으로 경쾌하고 낙천적인 기질을 가진 사람들을 위한 인터렉션을 배치하였다.
 
-    ![](Document/Images/orange.png)
+    ![orange](https://user-images.githubusercontent.com/43662673/114697562-08c96a80-9d59-11eb-9dd0-11052d2399f5.gif)
 
   - Yellow
 
     - Yellow 맵은 `황금의 방`으로 논리와 분석을 통해 다른 공간으로 이동 가능하도록 하는 인터렉션을 넣어 재미를 느끼도록 하였다.
 
-    ![](Document/Images/yellow.png)
+    ![yellow](https://user-images.githubusercontent.com/43662673/114697632-1e3e9480-9d59-11eb-89b4-f90a55cdbdbc.gif)
 
   - Green
 
     - Green 맵은 `자연속 산책`으로 자연 속에서 평안과 균형을 느낄 수 있는 인터렉션을 넣어 사용자가 휴식의 느낌을 갖도록 하였다.
 
-    ![](Document/Images/green.png)
+    ![green](https://user-images.githubusercontent.com/43662673/114697623-1aab0d80-9d59-11eb-8aa0-c4bf1bcb5974.gif)
 
   - Blue
 
@@ -58,7 +58,7 @@
 
     - Navy 맵은 `신비한 밤바다`로 정신적을 면을 중시하고 일상과 현실의 평범함의 중요성을 강조하는 인터렉션을 배치하여 자신감을 갖도록 유도하는 인터렉션을 배치하였다.
 
-    ![](Document/Images/navy.png)
+    ![navy](https://user-images.githubusercontent.com/43662673/114697560-07983d80-9d59-11eb-85d1-5f1d48d8d2ba.gif)
 
   - Purple
 
@@ -70,7 +70,7 @@
 
     - Pink 맵은 `벚꽃 사막`으로 분홍 빛 사막 속 벚꽃을 배치하여 행동에 따라 신비롭고 편안함을 주는 인터렉션을 배치하여 타인에게 에너지를 쓰는 기질의 사람들에게 휴식의 느낌을 주도록 하였다.  
 
-    ![](Document/Images/pink.png)
+    ![](Document/Images/pink.gif)
 
 - Multibus
 
