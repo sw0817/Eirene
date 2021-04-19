@@ -24,6 +24,10 @@
 
   March 1st 2021 ~ April 9th 2021
 
+- Prize
+
+  삼성 청년 SW 아카데미 특화프로젝트 서울 지역 1등
+
 - Tech Stack
 
   ![](Document/Images/techstack.png)
